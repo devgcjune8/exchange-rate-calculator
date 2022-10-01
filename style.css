@@ -155,10 +155,6 @@ input[type=number] {
     .currency input {
         width: 150px;
     }
-    .copy {
-        top: 20px;
-        left: 40px;
-    }
 }
 
 .rate-p {
