@@ -5,6 +5,7 @@ const amountFrom = document.querySelector('#amt-from')
 const amountTo = document.querySelector('#amt-to')
 const swapBtn = document.querySelector('.swap-btn')
 const rateEl = document.querySelector('.rate-p')
+const copyBtn = document.querySelector('.copy')
 
 const exchangeMoney = () => {
     const currency_a = currencyFrom.value;
@@ -49,7 +50,20 @@ window.onload =( ) => {
 
     setTimeout(() => {
         selectBtns.forEach(select => (select.classList.remove('glow')))
-    }, 2000)
-
-    
+    }, 2000)   
 }
+
+copyBtn.addEventListener('click', () => {
+
+    // Select the text field
+    amountTo.focus()
+    amountTo.select();
+  
+    try {
+        let successful = document.execCommand('copy');
+        let msg = successful ? 'successful' : 'unsuccessful';
+        console.log('Copying text command was ' + msg);
+      } catch (err) {
+        console.log('Oops, unable to copy');
+      }
+  } )

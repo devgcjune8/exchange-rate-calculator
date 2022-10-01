@@ -75,6 +75,7 @@ button:active {
     display: flex;
     flex-direction: row-reverse;
     padding: 0.6em;
+    position: relative;
 }
 
 .currency select {
@@ -128,15 +129,35 @@ input[type=number] {
     border-radius: 3px 10px 3px;
     border: 1px solid cyan;
     font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.rate:hover {
-    box-shadow: 0 0 10px white;
+.copy {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    color: rgb(0, 0, 0);
+    left: 20px;
+} 
+
+.copy:active {
+    transform: scale(0.97);
+} 
+
+
+.copy:hover, .rate:hover {
+    box-shadow: 0 0 10px cyan;
 }
 
 @media (max-width: 500px) {
     .currency input {
         width: 150px;
+    }
+    .copy {
+        top: 20px;
+        left: 40px;
     }
 }
 
